@@ -13,7 +13,7 @@
 
 DIR="/home/systa/GENREPO/week1"
 PERM="755"
-EMAIL="your-email@gmail.com"
+EMAIL="shaistasagheer21@gmail.com"
 
 CURR=$(stat -c "%a" "$DIR")
 
