@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DIR="/path/to/folder"
+PERM="755"
+EMAIL="shaistasagheer21@gmail.com"
+
+CURR=$(stat -c "%a" $DIR)
+
+if [ "$CURR" != "$PERM" ]
+then
+  echo "Permission has been changed! Fixing it now."
+
+  chmod $PERM $DIR
+
+  echo "Permission change detected and fixed." | mail -s "Permission Alert" $EMAIL
+fi

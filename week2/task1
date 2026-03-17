@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# files to backup
+FILE1="/home/ubuntu/script1.sh"
+FILE2="/home/ubuntu/script2.sh"
+
+# backup folder
+DEST="/home/ubuntu/backup"
+
+# log file
+LOGFILE="/home/ubuntu/backup.log"
+
+DATE=$(date '+%Y-%m-%d %H:%M:%S')
+
+echo "[$DATE] Backup started" >> $LOGFILE
+
+# copy files
+cp $FILE1 $DEST
+cp $FILE2 $DEST
+
+if [ $? -eq 0 ]
+then
+  echo "[$DATE] Backup successful" >> $LOGFILE
+else
+  echo "[$DATE] Backup failed" >> $LOGFILE
+fi

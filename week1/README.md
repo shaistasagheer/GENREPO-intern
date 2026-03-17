@@ -1,0 +1,2 @@
+If a process or service’s memory usage exceeds 256 MB, restart the service.
+You have granted a user access to a directory, but they changed the directory permissions — detect the change and restore the correct permissions.

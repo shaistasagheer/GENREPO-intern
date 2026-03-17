@@ -1,0 +1,26 @@
+#!/bin/bash
+
+SERVICE=nginx
+THRESHOLD=256
+EMAIL="shaistasagheer21@gmail.com"
+
+MEMORY=$(ps -C $SERVICE -o rss= | awk '{sum+=$1} END {print sum/1024}')
+
+if [ "$MEMORY" -gt "$THRESHOLD" ]
+then
+  MESSAGE="Memory high ($MEMORY MB). Restarting $SERVICE service."
+  
+  echo "$MESSAGE"
+  
+  # restart service
+  sudo systemctl restart $SERVICE
+  
+  # send email
+  echo "$MESSAGE" | mail -s "ALERT: $SERVICE Memory High" $EMAIL
+
+else
+  MESSAGE="Memory normal ($MEMORY MB)."
+  
+  echo "$MESSAGE"
+  
+fi
