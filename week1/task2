@@ -1,16 +1,32 @@
+
+
+
+
+
+
+
+
+
+
+
 #!/bin/bash
 
-DIR="/path/to/folder"
+DIR="/home/systa/GENREPO/week1"
 PERM="755"
-EMAIL="shaistasagheer21@gmail.com"
+EMAIL="your-email@gmail.com"
 
-CURR=$(stat -c "%a" $DIR)
+CURR=$(stat -c "%a" "$DIR")
 
 if [ "$CURR" != "$PERM" ]
 then
   echo "Permission has been changed! Fixing it now."
 
-  chmod $PERM $DIR
+  chmod "$PERM" "$DIR"
 
-  echo "Permission change detected and fixed." | mail -s "Permission Alert" $EMAIL
+  echo "Permission change detected and fixed." | mail -s "Permission Alert" "$EMAIL"
+else
+  echo "Permissions are correct"
 fi
+
+
+

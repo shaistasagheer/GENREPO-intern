@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # files to backup
-FILE1="/home/ubuntu/script1.sh"
-FILE2="/home/ubuntu/script2.sh"
+FILE1="/home/systa/script1.sh"
+FILE2="/home/systa/script2.sh"
 
 # backup folder
-DEST="/home/ubuntu/backup"
+DEST="/home/systa/backup"
 
 # log file
-LOGFILE="/home/ubuntu/backup.log"
+LOGFILE="/home/systa/backup.log"
 
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 
